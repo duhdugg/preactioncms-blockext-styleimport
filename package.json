@@ -22,7 +22,7 @@
     ]
   },
   "browserslist": {
-    "production": "defaults and support es6-module",
+    "production": "defaults and supports es6-module",
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
