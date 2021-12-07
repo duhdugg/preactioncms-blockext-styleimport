@@ -2,10 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Input } from '@preaction/inputs'
 
-class StyleImport extends React.Component {
-  render() {
-    return <link rel='stylesheet' href={this.props.url} />
-  }
+function StyleImport(props) {
+  return <link rel='stylesheet' href={props.url} />
 }
 
 StyleImport.propTypes = {
@@ -19,21 +17,19 @@ StyleImport.defaultProps = {
   url: '',
 }
 
-class StyleImportSettings extends React.Component {
-  render() {
-    return (
-      <div>
-        <h6>StyleImport Settings</h6>
-        <hr className='mb-3' />
-        <Input
-          type='url'
-          label='CSS URL'
-          value={this.props.propsData.url}
-          valueHandler={this.props.getPropsDataValueHandler('url')}
-        />
-      </div>
-    )
-  }
+function StyleImportSettings(props) {
+  return (
+    <div>
+      <h6>StyleImport Settings</h6>
+      <hr className='mb-3' />
+      <Input
+        type='url'
+        label='CSS URL'
+        value={props.propsData.url}
+        valueHandler={props.getPropsDataValueHandler('url')}
+      />
+    </div>
+  )
 }
 
 StyleImportSettings.propTypes = {
