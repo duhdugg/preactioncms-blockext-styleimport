@@ -2,6 +2,8 @@ import { StyleImport } from './StyleImport.jsx'
 import { Boilerplate, Card } from '@preaction/bootstrap-clips'
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import '@preaction/bootstrap-clips/dist/preaction-bootstrap-clips.css'
+import './mock.scss'
 
 const propsData = {
   msg: 'Hello, Strangers!',
@@ -46,17 +48,9 @@ class MockCMS extends React.Component {
   render() {
     // this emulates how the component is rendered in Preaction CMS
     return (
-      <div className='App'>
-        <Boilerplate>
-          <main className='mt-3 mb-3'>
-            <Card
-              header={mockPreaction.block.settings.header}
-              headerTheme='blue'
-            >
-              <StyleImport preaction={mockPreaction} {...propsData} />
-            </Card>
-          </main>
-          <footer>
+      <div className='App mock'>
+        <Boilerplate
+          footer={
             <Card header='Settings View' headerTheme='dark'>
               <StyleImport.Settings
                 propsData={propsData}
@@ -65,7 +59,11 @@ class MockCMS extends React.Component {
                 )}
               />
             </Card>
-          </footer>
+          }
+        >
+          <Card header={mockPreaction.block.settings.header} headerTheme='blue'>
+            <StyleImport preaction={mockPreaction} {...propsData} />
+          </Card>
         </Boilerplate>
       </div>
     )
