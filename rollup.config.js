@@ -17,18 +17,29 @@ const plugins = [
   commonjs(),
 ]
 
-const esmConfig = {
-  input: 'src/StyleImport.jsx',
-  external: ['prop-types'],
-  output: [
-    {
-      file: pkg.module,
-      format: 'esm',
-      sourcemap: true,
-    },
-  ],
-  plugins: plugins.concat(visualizer({ filename: 'stats/esm.html' })),
+const getEsmConfig = (inputFile, outputName) => {
+  return {
+    input: inputFile,
+    external: ['prop-types'],
+    output: [
+      {
+        file: `dist/${outputName}.esm.js`,
+        format: 'esm',
+        sourcemap: true,
+      },
+    ],
+    plugins: plugins.concat(
+      visualizer({ filename: `stats/${outputName}.html` })
+    ),
+  }
 }
 
-const m = [esmConfig]
+const m = [
+  getEsmConfig('src/StyleImport.jsx', 'preactioncms-blockext-styleimport'),
+  getEsmConfig(
+    'src/StyleImportSettings.jsx',
+    'preactioncms-blockext-styleimport-settings'
+  ),
+]
+
 export default m

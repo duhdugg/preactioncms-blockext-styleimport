@@ -1,9 +1,12 @@
-import { StyleImport } from './StyleImport.jsx'
+import StyleImport from './StyleImport.jsx'
+import StyleImportSettings from './StyleImportSettings.jsx'
 import { Boilerplate, Card } from '@preaction/bootstrap-clips'
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import '@preaction/bootstrap-clips/dist/preaction-bootstrap-clips.css'
 import './mock.scss'
+
+StyleImport.Settings = StyleImportSettings
 
 const mockPropsData = {
   msg: 'Hello, Strangers!',
