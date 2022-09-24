@@ -1,6 +1,6 @@
 {
   "name": "preactioncms-blockext-styleimport",
-  "version": "0.0.0-alpha.0",
+  "version": "0.1.0-alpha.0",
   "private": true,
   "description": "Preaction CMS Extension Block Style Import",
   "repository": "https://github.com/duhdugg/preactioncms-blockext-styleimport.git",
